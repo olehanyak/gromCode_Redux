@@ -4,16 +4,21 @@ import { userDataContext } from "./UserData";
 
 class App extends Component {
     state = {
-        userData: this.context,
+        userData: {
+            name: "Nikola Tesla",
+            avatar_url: "https://avatars3.githubusercontent.com/u10001",
+        },
     };
 
     render() {
         console.log(this.context);
-        
+
         return (
-            <div className="page">
-                <Header userData={this.context} />
-            </div>
+            <userDataContext.Provider value={this.state.userData}>
+                <div className="page">
+                    <Header />
+                </div>
+            </userDataContext.Provider>
         );
     }
 }

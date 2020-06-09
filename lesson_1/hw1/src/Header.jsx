@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { ThemeContext } from "./UserData";
-import UserMenu from './UserMenu';
+import UserMenu from "./UserMenu";
+// import { userDataContext } from "./UserData";
 
 class Header extends Component {
     render() {
@@ -8,12 +8,10 @@ class Header extends Component {
 
         return (
             <header className="header">
-                <UserMenu userData={this.props.userData} />
+                <UserMenu />
             </header>
         );
     }
 }
-
-// Header.contextType = ThemeContext;
 
 export default Header;
