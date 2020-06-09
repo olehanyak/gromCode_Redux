@@ -1,25 +1,29 @@
 import React, { Component } from "react";
-import { themes, ThemeContext } from "./UserData";
 import Header from "./Header";
+import { userDataContext } from "./UserData";
 
 class App extends Component {
     state = {
-        userData: this.props,
+        userData: this.context,
     };
 
-    // toggleTheme = () => {
-    //     const newTheme = this.state.theme === themes.light ? themes.dark : themes.light;
-
+    // contextData = () => {
     //     this.setState({
-    //         theme: newTheme,
-    //     });
-    // };
+    //         userData: this.state.context,
+    //     })
+    // }
 
     render() {
-        return <div className="page">
-            <Header userData={this.props} />
-        </div>;
+        console.log(this.context);
+        
+        return (
+            <div className="page">
+                <Header userData={this.context} />
+            </div>
+        );
     }
 }
+
+App.contextType = userDataContext;
 
 export default App;

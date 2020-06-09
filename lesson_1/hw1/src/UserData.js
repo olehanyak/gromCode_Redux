@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const userData = {
-    name: 'Nicola Tesla',
+    name: 'Nikola Tesla',
     avatar_url: "https://avatars3.githubusercontent.com/u10001",
 };
 

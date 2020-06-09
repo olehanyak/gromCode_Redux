@@ -4,11 +4,11 @@ import UserMenu from './UserMenu';
 
 class Header extends Component {
     render() {
-        console.log(this.context);
+        console.log(this.props.userData);
 
         return (
             <header className="header">
-                <UserMenu userData={this.props} />
+                <UserMenu userData={this.props.userData} />
             </header>
         );
     }
