@@ -7,12 +7,6 @@ class App extends Component {
         userData: this.context,
     };
 
-    // contextData = () => {
-    //     this.setState({
-    //         userData: this.state.context,
-    //     })
-    // }
-
     render() {
         console.log(this.context);
         
