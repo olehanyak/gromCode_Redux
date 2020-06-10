@@ -24,7 +24,7 @@ export const reset = () => {
 
 };
 
-export const initialState = {
+const initialState = {
     history: [],
 }
 
@@ -50,5 +50,6 @@ const counterReducer = (state = initialState, action) => {
     }
 };
 
-export const store = createStore(counterReducer);
+const store = createStore(counterReducer);
 
+export default store;
