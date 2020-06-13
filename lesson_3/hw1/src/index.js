@@ -10,7 +10,7 @@ store.subscribe(() => {
     console.log(store.getState());
 })
 
-store.dispatch(setLanguage('jp'));
+store.dispatch(setLanguage({ language: 'fra'}));
 
 store.dispatch(addProduct({ id: 333, name: 'water' }));
 store.dispatch(addProduct({ id: 113, name: 'cake' }));

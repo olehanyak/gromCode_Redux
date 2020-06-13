@@ -9,13 +9,14 @@ export const userReducer = (state = initialState, action) => {
         case SET_USER: {
             return {
                 ...state,
-                user: state.user
+                user: action.payload.data,
             };
         }
         case REMOVE_USER: {
             return {
                 ...state,
-            };
+            }
+
         }
         default:
             return state;

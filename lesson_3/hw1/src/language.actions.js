@@ -1,15 +1,12 @@
 
-export const ENGLAND = 'en';
-export const UKRAINE = 'ua';
+export const SET_LANGUAGE = 'SET_LANGUAGE';
 
-export const setLanguage = () => {
+
+export const setLanguage = (language) => {
     return {
-        type: ENGLAND,
+        type: SET_LANGUAGE,
+        payload: {
+            language,
+        }
     };
 };
-
-// export const setLanguage = () => {
-//     return {
-//         type: ENGLAND,
-//     };
-// };
