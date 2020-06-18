@@ -1,18 +1,20 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import * as usersActions from "./users.actions";
 
 class SearchField extends Component {
-    state = {
-        userName: "",
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            userName: "",
+        };
+    }
 
-    onChange = (event) => {
+    onChange = (e) =>
         this.setState({
-            userName: event.target.value,
+            userName: e.target.value,
         });
-    };
 
     handleUserSearch = () => {
         this.props.fetchUserData(this.state.userName);
@@ -21,8 +23,8 @@ class SearchField extends Component {
     render() {
         return (
             <div className="name-form">
-                <input onChange={this.onChange} type="text" className="name-form__input" value={this.state.userName} />
-                <button onClick={this.handleUserSearch} className="name-form__btn btn">
+                <input type="text" className="name-form__input" onChange={this.onChange} />
+                <button className="name-form__btn btn" onClick={this.handleUserSearch}>
                     Show
                 </button>
             </div>

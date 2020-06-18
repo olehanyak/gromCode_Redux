@@ -1,11 +1,7 @@
 import React from "react";
 
 const Spinner = () => {
-    return (
-        <div>
-            <span className="spinner"></span>
-        </div>
-    );
+    return <span className="spinner"></span>;
 };
 
 export default Spinner;
