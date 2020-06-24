@@ -11,7 +11,7 @@ export const createTask = (taskData) => {
     body: JSON.stringify(taskData),
   }).then((response) => {
     if (!response.ok) {
-      throw new Error("Faild to create task");
+      throw new Error("Failed to create task");
     }
   });
 };
@@ -25,7 +25,7 @@ export const updateTask = (taskId, taskData) => {
     body: JSON.stringify(taskData),
   }).then((response) => {
     if (!response.ok) {
-      throw new Error("Faild to update task");
+      throw new Error("Failed to update task");
     }
   });
 };
@@ -41,22 +41,9 @@ export const deleteTask = (id) => {
 };
 
 
-export const fetchTasksList = () => {
-  return fetch(baseUrl)
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
-    .then((tasksList) => tasksList
-    );
-};
+export const fetchTasksList = () =>
+  fetch(baseUrl).then((response) => {
+    if (response.ok) return response.json();
 
-// export const fetchTasksList = () => {
-//   return fetch(baseUrl)
-//     .then((res) => res.json())
-// };
-
-// fetchTasksList().then(data => console.log(data))
-
-
+    throw new Error("Failed to download tasks");
+  });

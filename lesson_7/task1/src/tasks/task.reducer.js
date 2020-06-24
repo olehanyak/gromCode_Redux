@@ -4,17 +4,18 @@ const initialState = {
     tasksList: [],
 };
 
-export const tasksReducer = (state = initialState, action) => {
+const tasksReducer = (state = initialState, action) => {
     switch (action.type) {
-        case TASKS_LIST_RECEIVED:
+        case TASKS_LIST_RECEIVED: {
             return {
                 ...state,
                 tasksList: action.payload.tasksList,
             };
+        }
 
         default:
-            return {
-                state,
-            };
+            return state;
     }
 };
+
+export default tasksReducer;

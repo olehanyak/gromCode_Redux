@@ -18,9 +18,9 @@ class TodoList extends Component {
                 <h1 className="title">Todo List</h1>
                 <TaskList
                     tasks={this.props.tasks}
-                    onCreate={this.props.createTasks}
-                    onDelete={this.props.deleteTasks}
-                    onChange={this.props.updateTasks}
+                    onCreate={this.props.createTask}
+                    onDelete={this.props.deleteTask}
+                    onChange={this.props.updateTask}
                 />
             </>
         );
@@ -30,15 +30,15 @@ class TodoList extends Component {
 TodoList.propTypes = {
     tasks: PropTypes.arrayOf(PropTypes.shape()),
     getTaskList: PropTypes.func.isRequired,
-    updateTasks: PropTypes.func.isRequired,
-    deleteTasks: PropTypes.func.isRequired,
-    createTasks: PropTypes.func.isRequired,
+    updateTask: PropTypes.func.isRequired,
+    deleteTask: PropTypes.func.isRequired,
+    createTask: PropTypes.func.isRequired,
 };
 const mapDispatch = {
     getTaskList: tasksActions.getTaskList,
-    updateTasks: tasksActions.updateTasks,
-    deleteTasks: tasksActions.deleteTasks,
-    createTasks: tasksActions.createTasks,
+    updateTask: tasksActions.updateTask,
+    deleteTask: tasksActions.deleteTask,
+    createTask: tasksActions.createTask,
 };
 const mapState = (state) => {
     return {
